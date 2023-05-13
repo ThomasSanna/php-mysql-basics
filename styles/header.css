@@ -45,6 +45,7 @@
   justify-content: space-between;
   align-items: center;
   padding: 0 20px;
+  box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.25);
 }
 
 .headergauche {
@@ -91,6 +92,10 @@
   opacity: 0.8;
 }
 
+a{
+  cursor: pointer;
+}
+
 .headerimage {
   -o-object-fit: cover;
      object-fit: cover;
@@ -99,3 +104,52 @@
   border-radius: 50%;
   align-self: center;
 }/*# sourceMappingURL=header.css.map */
+
+.form-add-invisible{
+  position: fixed !important;
+  top:20vh;
+  left: 36.5vw;
+  padding:50px 0;
+  display: none;
+  flex-direction: column;
+  justify-content: space-evenly;
+  align-items: center;
+  width: 400px;
+  height: 400px;
+  background-color: #f7f7f7;
+  border-radius: 10px;
+  box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.25);
+  z-index: 100;
+  transition: opacity 0.2s ease-in-out;
+}
+
+.form-active{
+  display: flex;
+}
+
+.inp-text-add{
+  width: 350px;
+  height: 50px;
+  border-radius: 5px;
+  border: 1px solid #c3c3c3;
+  padding-left: 10px;
+}
+
+.inp-text-add:focus{
+  outline: none;
+  border: 1px solid #33adff;
+}
+
+.inp-button-add{
+  width: 350px;
+  height: 40px;
+  border-radius: 5px;
+  border: none;
+  background-color: #33adff;
+  color: #f7f7f7;
+  font-size: 1rem;
+  cursor: pointer;
+}
+.inp-button-add:hover{
+  background-color: #64c1ff;
+}

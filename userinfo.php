@@ -17,7 +17,8 @@ function getUserInfo()
                 'username' => $user['username'],
                 'email' => $user['email'],
                 'profilepicture' => $user['profilepicture'],
-                'biographie' => $user['biographie']
+                'biographie' => $user['biographie'],
+                'admin' => $user['admin']
             ];
 
             return $userInfo;

@@ -1,5 +1,5 @@
 <?php
-$title = "Portfolio";
+$titrepage = "Portfolio";
 require('header.php');
 ?>
 

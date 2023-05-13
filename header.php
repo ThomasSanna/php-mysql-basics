@@ -1,4 +1,5 @@
-<?php session_start() ?>
+<?php session_start();
+include 'userinfo.php' ?>
 
 <!DOCTYPE html>
 <html lang="en">
@@ -27,13 +28,27 @@
                 <li><a class="headlien hdlgauche" href="index.php">Accueil</a></li>
                 <li><a class="headlien hdlgauche" href="profil.php">Profil</a></li>
                 <li><a class="headlien hdlgauche" href="portfolio.php">Portfolio</a></li>
+                <?php if (isset($_SESSION['username'])){
+                    $userInfo = getUserInfo();
+                    if ($userInfo['admin'] == 1){
+                        echo "<li><a class='headlien hdlgauche'>Add</a></li>";
+                   }
+                } 
+                ?>
+                    
             </ul>
+                <form class="form-add-invisible" action="portfolio.php" method="POST" enctype="multipart/form-data">
+                    <input class="inp-text-add" type="text" name="title" placeholder="Title">
+                    <input class="inp-text-add" type="text" name="description" placeholder="Description">
+                    <input class="inp-file-add" type="file" name="image" placeholder="Image">
+                    <button class="inp-button-add" type="submit" name="portfolio-submit">Submit</button>
+                </form>
+
             <ul class="headerdroite">
 
                 <!-- recupere la photo de profil sql de l'utilisateur connecté et l'affiche  -->
                 <?php 
                 if (isset($_SESSION['username'])) {
-                    include 'userinfo.php';
                     $userInfo = getUserInfo();
                     $headerprofilepicture = $userInfo['profilepicture'];
                 }
