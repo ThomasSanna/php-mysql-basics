@@ -1,0 +1,88 @@
+.profilchange {
+    margin-top: 20px;
+    height: auto;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+
+.formpro {
+    background-color: #f7f7f7;
+    width: 900px;
+    height: auto;
+    border: 1px solid rgb(151, 151, 151);
+    border-radius: 10px;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.formpro h1 {
+    font-weight: 300;
+    font-size: 2rem;
+    margin-bottom: 20px;
+}
+
+.contourprofilepic {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-width: 95px;
+    min-height: 95px;
+    border: 1.7px solid rgb(119, 119, 119);
+    border-radius: 50%;
+    background-color: rgb(187, 218, 255);
+    cursor: pointer;
+}
+
+.textonhover {
+    &:hover {
+        .profileimage {
+            opacity: 0.8;
+        }
+    }
+    position: absolute;
+    opacity: 1;
+}
+
+.profileimage {
+    position: relative;
+    object-fit: cover;
+    width: 95px;
+    height: 95px;
+    border-radius: 50%;
+    align-self: center;
+    &:hover {
+            opacity: 0.8;
+    }
+}
+
+.champs {
+    width: 100%;
+    height: auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: start;
+    margin-top: 20px;
+    * {
+        margin-bottom: 10px;
+        font-size: 1.6rem;
+    }
+    input {
+        color: rgb(78, 78, 78);
+        width: 100%;
+        height: 40px;
+        border: 2px solid rgb(151, 151, 151);
+        border-radius: 5px;
+        padding: 0 10px;
+        font-size: 1.4rem;
+        &:focus {
+            outline: none;
+            border: 2px solid rgb(3, 158, 247);
+            background-color: rgb(233, 250, 255);
+        }
+    }
+}

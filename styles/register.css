@@ -1,0 +1,60 @@
+main {
+    margin-top: 50px;
+    margin-bottom: 50px;
+}
+
+form {
+    margin-top: 50px;
+    margin: 0 auto;
+    width: 500px;
+    border: 2px solid rgb(207, 207, 207);
+    padding: 20px;
+    border-radius: 5px;
+    background-color: #f7f7f7;
+}
+form * {
+    font-size: 1.3rem;
+}
+input {
+    width: 100%;
+    padding: 10px;
+    margin-top: 5px;
+    margin-bottom: 5px;
+}
+
+input[type="text"], input[type="password"] {
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+input[type="text"]:focus, input[type="password"]:focus {
+    outline: none;
+    border: 1px solid #0099ff;
+}
+
+input[type="submit"] {
+    width: 100%;
+    background-color: #0099ff;
+    color: #fff;
+    border: none;
+}
+input[type="submit"]:hover {
+    background-color: #33adff;
+    cursor: pointer;
+}
+label {
+    font-weight: bold;
+}
+h1 {
+    font-size: 2rem;
+    font-weight: bold;
+    text-align: center;
+}
+h4 {
+    text-align: end;
+    font-size: 1.2rem;
+}
+
+a {
+    text-decoration: none;
+    color: #0099ff;
+}
