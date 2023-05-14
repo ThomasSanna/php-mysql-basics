@@ -177,4 +177,26 @@ if(isset($_POST['update-submit'])) {
 
 }
 
+
+
+// PORTFOLIO ADD IMAGE
+
+if (isset($_POST['portfolio-submit'])) {
+
+    $dpp = new PDO('mysql:host=localhost;dbname=testtrue', 'root', '');
+
+    $title = $_POST['title'];
+    $description = $_POST['description'];
+    $image = $_FILES['image'];
+
+    $image_name = $image['name'];
+    $image_tmp_name = $image['tmp_name'];
+
+    $image_destination = 'portfolioImages/' . $image_name;
+    move_uploaded_file($image_tmp_name, $image_destination);
+    $query = $dpp->prepare("INSERT INTO portfolio (title, description, image) VALUES ('$title', '$description', '$image_destination')");
+    $query->execute();
+    header('Location: portfolio.php');
+}
+
 ?>

@@ -53,23 +53,45 @@ require('header.php');
 
     <swiper-container class="mySwiper" pagination="true" pagination-clickable="true" space-between="30"
         slides-per-view="3">
-        <swiper-slide>
-            <img src="https://swiperjs.com/demos/images/nature-1.jpg" />
-        </swiper-slide>
-        <swiper-slide>
-            <img src="https://swiperjs.com/demos/images/nature-2.jpg" />
-        </swiper-slide>
-        <swiper-slide>
-            <img src="https://swiperjs.com/demos/images/nature-3.jpg" />
-        </swiper-slide>
-        <swiper-slide>
-            <img src="https://swiperjs.com/demos/images/nature-4.jpg" />
-        </swiper-slide>
+        
+        <?php
+        include('portfolioinfo.php');
+        $count = getCountId();
+
+        for ($i = 1; $i <= $count[0]; $i++) {
+            $image = getImageInfo($i);
+            echo '<swiper-slide>
+            <a target="_blank" href="./' . $image['image'] . '" class="cardfocus">
+                <h1 class="title">' . $image['title'] . '</h1>
+                <p class="description">' . $image['description'] . '</p>
+            </a>
+            <img class="imagecard" src="' . $image['image'] . '" />
+            </swiper-slide>';
+        }
+        ?>
 
     </swiper-container>
 
     <script src="https://cdn.jsdelivr.net/npm/swiper@9/swiper-element-bundle.min.js"></script>
+    <script>
+        let imagecard = document.querySelectorAll('.imagecard');
+        let cardfocus = document.querySelectorAll('.cardfocus');
 
+        for (let i = 0; i < imagecard.length; i++) {
+            imagecard[i].addEventListener('mouseover', () => {
+                cardfocus[i].style.display = "flex";
+            })
+            imagecard[i].addEventListener('mouseout', () => {
+                cardfocus[i].style.display = "none";
+            })
+            cardfocus[i].addEventListener('mouseover', () => {
+                cardfocus[i].style.display = "flex";
+            })
+            cardfocus[i].addEventListener('mouseout', () => {
+                cardfocus[i].style.display = "none";
+            })
+        }
+    </script>
 </body>
 
 </html>

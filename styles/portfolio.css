@@ -1,0 +1,23 @@
+swiper-slide .cardfocus {
+    position: absolute !important;
+    height: 600px;
+    width: 100%;
+    background-color: rgba(0, 0, 0, 0.469);
+    display: none;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    padding: 50px;
+    cursor: pointer;
+}
+
+.title{
+    font-size: 30px;
+    font-weight: bold;
+    margin-bottom: 20px;
+}
+
+.cardfocus:hover {
+    display: flex;
+}
